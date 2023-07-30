@@ -8,7 +8,7 @@ import UpdateItem from "./pages/Items/UpdateItem";
 import CreateItem from "./pages/Items/CreateItem";
 
 const router = createBrowserRouter([{
-  path: "/",
+  path: "/React-Stock/",
   element: <RootLayout />,
   children: [
     { index: true, element: <Home /> },
