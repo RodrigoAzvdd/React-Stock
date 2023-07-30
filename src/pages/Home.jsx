@@ -27,8 +27,6 @@ export default function Home() {
     return quantity
   }, 0)
 
-
-
   return (
     <main>
       <h1>Dashboard</h1>
