@@ -35,7 +35,7 @@ export default function ItemForm({ itemToUpdate }) {
             if (itemToUpdate) {
                 updateItem(itemToUpdate.id, item)
                 alert("Item atualizado com sucesso!")
-                navigate('/items')
+                navigate('/React-Stock/items')
             } else {
                 const validItem = new StockItem(item)
                 addItem(validItem)
