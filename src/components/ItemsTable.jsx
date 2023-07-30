@@ -24,10 +24,10 @@ export default function ItemsTable() {
                         <td>{item.quantity} unid.</td>
                         <td>{item.category}</td>
                         <td>
-                            <Link to={`/items/${item.id}`} className="button is-primary is-small">
+                            <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
                                 Ver
                             </Link>
-                            <Link to={`/items/${item.id}/update`} className="button is-small">
+                            <Link to={`/React-Stock/items/${item.id}/update`} className="button is-small">
                                 Atualizar
                             </Link>
                             <DeleteButton itemId={item.id} itemName={item.name} />

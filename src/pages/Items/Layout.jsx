@@ -7,8 +7,8 @@ export default function ItemsLayout() {
     <main>
       <h1>Stock Items</h1>
       <div className="tabs">
-        <Link to="/items" className={`tab ${pathname === "/items" ? "active" : ""}`}>Todos os itens</Link>
-        <Link to="/items/new" className={`tab ${pathname === "/items/new" ? "active" : ""}`}>Novo Item</Link>
+        <Link to="/React-Stock/items" className={`tab ${pathname === "/React-Stock/items" ? "active" : ""}`}>Todos os itens</Link>
+        <Link to="/React-Stock/items/new" className={`tab ${pathname === "/React-Stock/items/new" ? "active" : ""}`}>Novo Item</Link>
       </div>
       <Outlet />
     </main>
