@@ -214,7 +214,7 @@ footer {
   color: #d1d1d1;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 850px) {
   .itemsTable {
     display: flex;
     max-width: 760px;
@@ -228,6 +228,11 @@ footer {
   .tr {
     display: flex;
     flex-direction: column;
+
+  }
+
+  .tr td {
+    width: 12rem;
   }
 
   .td-btn {
