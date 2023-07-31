@@ -4,7 +4,7 @@ import DeleteButton from "../../components/DeleteButton"
 
 export default function ShowItem() {
     const { id } = useParams()
-    const { getItem } = useStock()
+    const { getItem, getCreatedDate, getUpdatedDate } = useStock()
     const item = getItem(id)
 
     return (
@@ -18,8 +18,8 @@ export default function ShowItem() {
                 <span>Preço: R$ {item.price}</span>
             </div>
             <div className="row">
-                <p>{`Criado em: ${item.createdAt.toDateString()}`}</p>
-                <p>{`Atualizado em: ${item.updatedAt.toDateString()}`}</p>
+                <p>{`Criado em: ${getCreatedDate(item.id)}`}</p>
+                <p>{`Atualizado em: ${getUpdatedDate(item.id)}`}</p>
             </div>
             <p>{item.description}</p>
         </div>

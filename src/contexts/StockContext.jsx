@@ -38,20 +38,20 @@ export function StockContextProvider({ children }) {
         })
     }
 
-    const updateItem = (itemId, newAtributes) => {
+    const updateItem = (itemId, newAttributes) => {
         setItems(currentItems => {
-            // Pego o index do objeto que deve ser atualizado
-            const itemIndex = currentItems.findIndex(item => item.id === +itemId)
-            // Faco uma copia do array Items >> pois nao posso alterar diretamente esse Items
-            const updatedItems = [...currentItems]
-            // uso o assign para fazer uma mescla
-            // já que o objeto passado poaaui os mesmos (name, description ...)
-            // ele irá alterar|atualizar >> fazendo com q o name seja atualizado para o name do objeto passado
-            Object.assign(updatedItems[itemIndex], newAtributes)
-            // salvo no localStorage passando para string
+            const updatedAt = new Date()
+            const updatedItems = currentItems.map(item => {
+                if (item.id === itemId) {
+                    return {
+                        ...item,
+                        ...newAttributes,
+                        updatedAt
+                    };
+                }
+                return item
+            })
             localStorage.setItem('react-stock', JSON.stringify(updatedItems))
-            // retorno o valor que sera setado no setItems
-            // no caso, a array com o elemento no indexItem atualizado 
             return updatedItems
         })
     }
@@ -60,12 +60,36 @@ export function StockContextProvider({ children }) {
         return items.find(item => +itemId === item.id)
     }
 
+    const getCreatedDate = (itemId) => {
+        const item = getItem(itemId)
+        const day = item.createdAt.getDate()
+        const month = item.createdAt.getMonth()
+        const hour = item.createdAt.getHours()
+        const min = item.createdAt.getMinutes()
+        const sec = item.createdAt.getSeconds()
+
+        return `${day}/${month} - ${hour}:${min}:${sec}`
+    }
+
+    const getUpdatedDate = (itemId) => {
+        const item = getItem(itemId)
+        const day = item.updatedAt.getDate()
+        const month = item.updatedAt.getMonth()
+        const hour = item.updatedAt.getHours()
+        const min = item.updatedAt.getMinutes()
+        const sec = item.updatedAt.getSeconds()
+
+        return `${day}/${month} - ${hour}:${min}:${sec}`
+    }
+
     const stock = {
         items,
         addItem,
         deleteItem,
         getItem,
-        updateItem
+        updateItem,
+        getCreatedDate,
+        getUpdatedDate
     }
 
     return (
