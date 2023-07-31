@@ -6,9 +6,9 @@ export default function ItemsTable() {
     const { items } = useStock();
 
     return (
-        <table>
+        <table className="itemsTable">
             <thead>
-                <tr>
+                <tr className="tr">
                     <th>ID</th>
                     <th>Nome</th>
                     <th>Em Estoque</th>
@@ -16,14 +16,14 @@ export default function ItemsTable() {
                     <th>Ações</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className="tbody">
                 {items.map((item) => (
-                    <tr key={item.id}>
+                    <tr className="tr" key={item.id}>
                         <td>{item.id}</td>
                         <td>{item.name}</td>
                         <td>{item.quantity} unid.</td>
                         <td>{item.category}</td>
-                        <td>
+                        <td className="td-btn">
                             <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
                                 Ver
                             </Link>

@@ -213,3 +213,32 @@ footer {
   cursor: pointer;
   color: #d1d1d1;
 }
+
+@media (max-width: 760px) {
+  .itemsTable {
+    display: flex;
+    max-width: 760px;
+    overflow-x: auto;
+  }
+
+  .tbody {
+    display: flex;
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .td-btn {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+  }
+
+  .button + .button {
+    margin-left: 0;
+  }
+}
