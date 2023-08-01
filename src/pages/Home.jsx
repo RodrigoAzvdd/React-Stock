@@ -58,15 +58,22 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {recentItems.map(item => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>
-                    <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
-                      Ver
-                    </Link></td>
-                </tr>
-              ))}
+              {recentItems.length <= 0 ?
+                (
+                  <tr>
+                    <td colSpan={2}>Nenhum item cadastrado</td>
+                  </tr>
+                )
+                :
+                recentItems.map(item => (
+                  <tr key={item.id}>
+                    <td>{item.name}</td>
+                    <td>
+                      <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
+                        Ver
+                      </Link></td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
@@ -80,16 +87,24 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              {lowQuantityItemsList.map(item => (
-                <tr key={item.id}>
-                  <td>{item.name}</td>
-                  <td>{item.quantity}</td>
-                  <td>
-                    <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
-                      Ver
-                    </Link></td>
-                </tr>
-              ))}
+              {
+                lowQuantityItemsList.length <= 0 ?
+                  (
+                    <tr>
+                      <td colSpan={3}>Nenhum item cadastrado</td>
+                    </tr>
+                  )
+                  :
+                  lowQuantityItemsList.map(item => (
+                    <tr key={item.id}>
+                      <td>{item.name}</td>
+                      <td>{item.quantity}</td>
+                      <td>
+                        <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
+                          Ver
+                        </Link></td>
+                    </tr>
+                  ))}
             </tbody>
           </table>
         </div>
