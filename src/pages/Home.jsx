@@ -61,7 +61,7 @@ export default function Home() {
               {recentItems.length <= 0 ?
                 (
                   <tr>
-                    <td colSpan={2}>Nenhum item cadastrado</td>
+                    <td colSpan={2}>Nenhum Item Cadastrado!</td>
                   </tr>
                 )
                 :
@@ -91,7 +91,7 @@ export default function Home() {
                 lowQuantityItemsList.length <= 0 ?
                   (
                     <tr>
-                      <td colSpan={3}>Nenhum item cadastrado</td>
+                      <td colSpan={3}>Nenhum Item Cadastrado!</td>
                     </tr>
                   )
                   :

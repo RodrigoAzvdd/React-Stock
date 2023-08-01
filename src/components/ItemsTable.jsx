@@ -17,23 +17,33 @@ export default function ItemsTable() {
                 </tr>
             </thead>
             <tbody className="tbody">
-                {items.map((item) => (
-                    <tr className="tr" key={item.id}>
-                        <td>{item.id}</td>
-                        <td>{item.name}</td>
-                        <td>{item.quantity} unid.</td>
-                        <td>{item.category}</td>
-                        <td className="td-btn">
-                            <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
-                                Ver
-                            </Link>
-                            <Link to={`/React-Stock/items/${item.id}/update`} className="button is-small">
-                                Atualizar
-                            </Link>
-                            <DeleteButton itemId={item.id} itemName={item.name} />
-                        </td>
-                    </tr>
-                ))}
+                {items.length > 0 ?
+                    items.map((item) => (
+                        <tr className="tr" key={item.id}>
+                            <td>{item.id}</td>
+                            <td>{item.name}</td>
+                            <td>{item.quantity} unid.</td>
+                            <td>{item.category}</td>
+                            <td className="td-btn">
+                                <Link to={`/React-Stock/items/${item.id}`} className="button is-primary is-small">
+                                    Ver
+                                </Link>
+                                <Link to={`/React-Stock/items/${item.id}/update`} className="button is-small">
+                                    Atualizar
+                                </Link>
+                                <DeleteButton itemId={item.id} itemName={item.name} />
+                            </td>
+                        </tr>
+                    ))
+                    :
+                    (
+                        <tr>
+                            <td colSpan={5}>
+                                Nenhum Item Cadastrado!
+                            </td>
+                        </tr>
+                    )
+                }
             </tbody>
         </table>
     )
