@@ -11,16 +11,11 @@ export default function Home() {
 
   const today = new Date()
   const limitDate = new Date()
-  // data limite == data atual - 10 dias >> limite == 10 dias
   limitDate.setDate(limitDate.getDate() - 10)
 
-  // Filter de items que possuem uma data de criacao (createdAt) entre today e limitDate (10 dias atras)
-  // logo >> se a data limite for 10/05 | e o item.createdAt for 09/05 == ele nao irá ser valido
-  // ja que a data limite é 10/05 !!
   const recentItems = items.filter((item) => item.createdAt >= limitDate && item.createdAt <= today)
-  // Tamanho da array (recentItems)
-  // Saber quantos items sao 'recentes' no total!
   const recentTotal = recentItems.length
+
   const lowQuantityItemsList = items.filter(item => item.quantity <= 10)
   const lowQuantityItems = items.reduce((quantity, item) => {
     if (item.quantity <= 10) +quantity++

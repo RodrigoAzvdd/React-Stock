@@ -25,7 +25,6 @@ export default function ItemForm({ itemToUpdate }) {
     const inputRef = useRef(null)
 
     const handleChange = (ev) => {
-        // ...parametros, parametro(name ex: id, name, category) == value do currentTarget
         setItem((current) => ({ ...current, [ev.target.name]: ev.target.value }))
     }
 

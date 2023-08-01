@@ -16,12 +16,12 @@ body {
   min-height: 100vh;
 }
 
-#root > header {
+#root>header {
   flex: 0 1 auto;
   padding: 0 2rem;
 }
 
-#root > div {
+#root>div {
   flex: 1 0 auto;
   padding: 0 2rem;
 }
@@ -32,7 +32,12 @@ header {
   justify-content: space-between;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
 }
 
@@ -91,7 +96,8 @@ tbody tr:hover {
   cursor: default;
 }
 
-th, td {
+th,
+td {
   /* border: 1px solid #fefefe; */
   padding: 1.25rem;
 }
@@ -109,7 +115,7 @@ th, td {
   transition: .2s;
 }
 
-.button + .button {
+.button+.button {
   margin-left: .75rem;
 }
 
@@ -139,7 +145,9 @@ form {
   padding: 2rem 0;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   background-color: #1c1a1d;
   border-radius: .25rem;
   border: 0;
@@ -195,7 +203,7 @@ input, textarea, select {
   gap: 2rem;
 }
 
-.li-footer{
+.li-footer {
   text-decoration: none;
   color: #fefefe;
 }
@@ -243,7 +251,7 @@ footer {
     gap: .5rem;
   }
 
-  .button + .button {
+  .button+.button {
     margin-left: 0;
   }
 }
